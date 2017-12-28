@@ -1,0 +1,37 @@
+count=0
+if __name__ == '__main__':
+    st = []
+    st1 = []
+    st2 = []
+    a=0
+    i=0
+    j=1
+    
+    for _ in range(int(input())):
+        name = input()
+        score = float(input())
+        st.append([name,score])
+        a=a+1
+       
+        for _ in range(a):
+            for _ in range(a):
+                st1.append(st[i][j])
+                a=0
+                i=i+1
+                count=count+1
+    minimum=min(st1)
+    #st1.remove(minimum)
+    
+    for k in range(count):
+        if minimum == st[k][1]:
+            st1.remove(minimum)
+    second=min(st1)
+    st1.sort()
+
+    for n in range(count):
+        if second == st[n][j]:
+            st2.append(st[n][0])
+            st2.sort()
+    for i in range(len(st2)):
+        print(st2[i])
+        
